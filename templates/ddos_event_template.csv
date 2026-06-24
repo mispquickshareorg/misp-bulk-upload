@@ -1,0 +1,24 @@
+# MISP DDoS Event Bulk Upload Template
+# Follow the Streamlined MISP DDoS Playbook for consistency
+#
+# INSTRUCTIONS:
+# 1. Fill in one row per DDoS event
+# 2. Required fields: date, event_name, attacker_ips, annotation_text
+# 3. Use semicolon (;) to separate multiple values in array fields
+# 4. TLP options: green, amber, red, clear (default: green)
+# 5. Workflow state is automatically set to "draft"
+# 6. All events are tagged with MITRE ATT&CK T1498 (Network Denial of Service)
+# 7. Date format: YYYY-MM-DD or YYYY-MM-DD HH:MM:SS
+# 8. destination_ips and destination_ports are optional
+#
+# TLS FINGERPRINT COLUMNS (all optional, semicolon-separated):
+# - ja3/ja3s: 32-char MD5 hash
+# - ja4, ja4s, ja4h, ja4x, ja4t, ja4ts, ja4ssh: JA4 family
+# - jarm: 62-char hex
+# - hassh/hasshserver: 32-char MD5
+#
+# EXAMPLE ROWS (remove before uploading):
+# 2024-01-15,DDoS Botnet Attack,green,203.0.113.10;203.0.113.11,,,Large-scale DDoS from botnet,,,,,,,,,,
+# 2024-01-16,Encrypted C2 DDoS,amber,198.51.100.5,10.0.0.1,443,Encrypted botnet,a0e9f5d64349fb13f5e0cd8c6e6e6e6e,,,,,,,,,
+
+date,event_name,tlp,attacker_ips,destination_ips,destination_ports,annotation_text,ja3,ja3s,ja4,ja4s,jarm,hassh,hasshserver,ja4h,ja4x,ja4t,ja4ts,ja4ssh
