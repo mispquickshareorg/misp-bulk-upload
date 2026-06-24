@@ -17,7 +17,7 @@ For each CSV row, an event is created with:
 
 ## Why it's minimal
 
-- **No auto-update, no subprocess calls** — the tool never shells out or contacts anything other than your configured MISP URL.
+- **No auto-update, no subprocess calls** - the tool never shells out or contacts anything other than your configured MISP URL.
 - Single, focused command.
 - Path/size validation and per-row validation are isolated in [csv_processor.py](csv_processor.py) for easy auditing.
 
@@ -44,8 +44,8 @@ cp .env.example .env
 
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
-| `MISP_URL` | Yes | — | Base URL of your MISP instance (`https://...`) |
-| `MISP_API_KEY` | Yes | — | Your MISP API authentication key |
+| `MISP_URL` | Yes | - | Base URL of your MISP instance (`https://...`) |
+| `MISP_API_KEY` | Yes | - | Your MISP API authentication key |
 | `MISP_VERIFY_SSL` | No | `true` | Set to `false` for self-signed certificates |
 | `MISP_TIMEOUT` | No | `30` | Request timeout in seconds |
 
@@ -68,7 +68,7 @@ See [templates/ddos_event_template.csv](templates/ddos_event_template.csv) for t
 # Validate and upload events from a CSV
 python main.py events.csv
 
-# Validate only — do not upload
+# Validate only - do not upload
 python main.py events.csv --dry-run
 
 # Skip invalid rows instead of failing
